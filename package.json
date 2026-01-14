@@ -1,0 +1,26 @@
+{
+  "name": "supabase-next-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:push": "supabase db push",
+    "db:seed": "node scripts/seed.mjs",
+    "db:setup": "powershell -ExecutionPolicy Bypass -File scripts/setup-db.ps1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "dotenv": "^16.4.5",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.11",
+    "@types/react": "18.3.3",
+    "typescript": "5.5.4"
+  }
+}
