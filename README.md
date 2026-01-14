@@ -22,6 +22,9 @@ Option A: Supabase SQL editor
 - Open `supabase/migrations/0001_init.sql`
 - Paste into the SQL editor and run
 - (Optional) Run `supabase/seed.sql` to load sample data
+- If your project had older migrations, also run `supabase/migrations/0003_create_business_tables.sql`
+- Reload the schema cache after changes:
+  - `select pg_notify('pgrst', 'reload schema');`
 
 Option B: Supabase CLI (linked project)
 
@@ -29,6 +32,12 @@ Option B: Supabase CLI (linked project)
 supabase link --project-ref <your-project-ref>
 npm run db:push
 npm run db:seed
+```
+
+If `db:seed` fails with “schema cache” errors, run this in the SQL editor:
+
+```sql
+select pg_notify('pgrst', 'reload schema');
 ```
 
 Option C: Scripted (Windows PowerShell, linked project)
